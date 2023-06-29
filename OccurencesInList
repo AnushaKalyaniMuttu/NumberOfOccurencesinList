@@ -1,0 +1,32 @@
+package com.employee;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class OperationString {
+
+	public static void main(String [] args) {
+		
+		List<String> list= Arrays.asList("apple","banana","orange","apple","apple");
+		
+		HashMap<String,Integer> fruitVsFrequency=new HashMap<>();
+		
+		list.forEach(f->{
+			if(fruitVsFrequency.containsKey(f)) {
+				fruitVsFrequency.put(f, fruitVsFrequency.get(f)+1);
+			}else
+			{
+				fruitVsFrequency.put(f, 1);
+
+			}
+		});
+		
+		for(Map.Entry<String, Integer> map:fruitVsFrequency.entrySet()) {
+			if(map.getKey().equals("apple")) {
+				System.out.println("The number of occurences of apple is:"+map.getValue());
+			}
+		}
+	}
+}
